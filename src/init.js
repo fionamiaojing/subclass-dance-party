@@ -29,13 +29,43 @@ $(document).ready(function() {
     );
     window.dancers.push(dancer);
     $('body').append(dancer.$node);
+    
+    $('.dancer').on('mouseover', function (event) {
+      $(this).css('transform', 'rotateY(180deg)').css('transition', '0.2s');
+      console.log('hi');
+    });
+
+    $('.dancer').on('mouseout', function (event) {
+      $(this).css('transform', 'rotateY(0deg)').css('transition', '0.2s');
+      console.log('hi');
+    });
+    
+    $('.dancer').on('click', function (event) {
+      
+      var top = parseInt($(this).css('top'));
+      var left = parseInt($(this).css('left'));
+      console.log(left, top);
+      var threshold = 500;
+      var distancePyth;
+      
+      window.dancers.forEach(function(dancer) {
+        dancerTop = parseInt(dancer.$node.css('top'));
+        dancerLeft = parseInt(dancer.$node.css('left'));
+        distancePyth = Math.sqrt(Math.pow((dancerTop - top), 2) + Math.pow((dancerLeft - left), 2));
+        console.log(distancePyth);
+        if (distancePyth < threshold) {
+          dancer.$node.css('transform', 'rotateY(180deg)');
+        }
+      });
+    });
+    
   });
   
   $('.lineUpButton').on('click', function(event) {
     var originDancer = window.dancers.slice();
     window.dancers = [];
     
-    var top = $('body').height() / 2;
+    var top = $('body').height() / 1.2;
     console.log(top);
     var left = 0;
     var lineUpDancer;
@@ -45,14 +75,9 @@ $(document).ready(function() {
       lineUpDancer.lineUp(top, left);
       window.dancers.push(lineUpDancer);
       $('body').append(lineUpDancer.$node);
-      left = left + 50;
-    }
-    
-    
-    
+      left = left + 90;
+    }  
   });
-  
-  
   
 });
 
