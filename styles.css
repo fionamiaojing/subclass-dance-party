@@ -5,6 +5,7 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  overflow: hidden;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -12,6 +13,10 @@ body, a:link, a:visited, a:active{
 .title, .addDancerButton{
   padding:5px 12px;
   float:right;
+}
+.lineUpButton{
+  padding:5px 12px;
+  float:left;
 }
 .topbar{
   height:32px;
@@ -24,4 +29,15 @@ body, a:link, a:visited, a:active{
   border:10px solid red;
   border-radius:10px;
   position:absolute;
+}
+
+.dancerBouncy {
+  border: 15px solid blue;
+  border-radius: 0px;
+  position:fixed;
+}
+
+.dancerFighting {
+  border: 20px solid yellow;
+  border-radius: 5px;
 }
