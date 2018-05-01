@@ -3,13 +3,18 @@ body, html{
 }
 body{
   margin: 0px;
-  background-color:#444;
   font-size: 18px;
-  overflow: hidden;
+  background-image: url('images/jungleBackground.jpg');
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
 }
+
+img {
+  height: 100px;
+  width: 80px;
+}
+
 .title, .addDancerButton{
   padding:5px 12px;
   float:right;
@@ -26,18 +31,19 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
+  border:0px solid red;
   border-radius:10px;
   position:absolute;
+  /*transition: 0.5s;*/
 }
 
 .dancerBouncy {
-  border: 15px solid blue;
+  border: 0px;
   border-radius: 0px;
-  position:fixed;
+  position:absolute;
 }
 
 .dancerFighting {
-  border: 20px solid yellow;
+  border: 0px;
   border-radius: 5px;
 }
