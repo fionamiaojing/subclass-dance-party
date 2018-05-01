@@ -2,7 +2,7 @@ var makeFightingDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.left = left;
   this.$node.addClass('dancerFighting');
-  this.$node.append("<img src='images/dinosaur.png' alt='Cat'>");
+  this.$node.append('<img src=\'images/dinosaur.png\' alt=\'Cat\'>');
 };
 
 makeFightingDancer.prototype = Object.create(makeDancer.prototype);

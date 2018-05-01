@@ -2,7 +2,7 @@ var makeBouncyDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
   this.top = top;
   this.$node.addClass('dancerBouncy');
-  this.$node.append("<img src='images/monkey.png' alt='Monkey'>");
+  this.$node.append('<img src=\'images/monkey.png\' alt=\'Monkey\'>');
 };
 
 makeBouncyDancer.prototype = Object.create(makeDancer.prototype);
